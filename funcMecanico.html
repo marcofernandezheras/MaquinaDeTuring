@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Funcionamiento Mecánico - Maquina de Turing</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron" style="overflow: auto">
+		  	<h1>Funcionamiento Mecánico</h1>
+		  	<div class="col-lg-8">
+		  		<p>La máquina de Turing consta de un cabezal lector/escritor y una cinta infinita en la que el cabezal lee el contenido, borra el contenido anterior y escribe un nuevo valor. Las operaciones que se pueden realizar en esta máquina se limitan a:
+				</p>
+				<ul>
+					<li>Mover el cabezal lector/escritor hacia la derecha.</li>
+					<li>Mover el cabezal lector/escritor hacia la izquierda.</li>
+				</ul>
+				<p>El cómputo se determina a partir de una tabla de estados de la forma:
+				(estado, valor) → (nuevo estado, nuevo valor, dirección)</p>
+		  	</div>		
+		  	<div class="col-lg-4">
+		  		<img src="img/cabezal.png" alt="Cinematón" class="img-responsive">
+		  	</div>  	  
+		</div>
+		<div class="col-lg-12">
+		<p>Esta tabla toma como parámetros el estado actual de la máquina y el carácter leído de la cinta, dando la dirección para mover el cabezal, el nuevo estado de la máquina y el valor a escribir en la cinta.
+		La memoria es la cinta de la máquina que se divide en espacios de trabajo denominados celdas, donde se pueden escribir y leer símbolos. Inicialmente todas las celdas contienen un símbolo especial denominado "blanco". Las instrucciones que determinan el funcionamiento de la máquina tienen la forma, "si estamos en el estado x leyendo la posición y, donde hay escrito el símbolo z, entonces este símbolo debe ser reemplazado por este otro símbolo, y pasar a leer la celda siguiente, bien a la izquierda o bien a la derecha".</p>
+
+		<p>La máquina de Turing puede considerarse como un autómata capaz de reconocer lenguajes formales. En ese sentido, es capaz de reconocer los lenguajes recursivamente enumerables, de acuerdo a la jerarquía de Chomsky. Su potencia es, por tanto, superior a otros tipos de autómatas, como el autómata finito, o el autómata con pila, o igual a otros modelos con la misma potencia computacional.</p>
+
+		</div>
+		<p><a class="btn btn-primary btn-lg pull-right" role="button" href="turing.html">Siguiente</a></p>
+		<footer class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<p class="text-center"><b>Santiago Copete Guisado</b></p>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="margin-top: 40px;">
+				<p class="text-center"><b>D.A.M. 1º - 2014</b></p>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<p class="text-center"><b>Marco A. Fernández Heras</b></p>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>	
