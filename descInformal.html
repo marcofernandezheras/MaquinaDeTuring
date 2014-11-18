@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Descripción informal - Maquina de Turing</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron" style="overflow: auto">
+            <h1>Descripción informal</h1>
+            <div class="col-lg-12">
+                <p>La máquina de Turing modela matemáticamente a una máquina que opera mecánicamente sobre una cinta. En esta cinta hay símbolos que la máquina puede leer y escribir, uno a la vez, usando un cabezal lector/escritor de cinta.</p>
+            </div>
+        </div>
+        <div class="col-lg-12">
+         <p>Más precisamente, una máquina de Turing consta de:</p>
+         <ol>
+            <li>Una cinta que se divide en celdas, una al lado de la otra. Cada celda contiene un símbolo de algún alfabeto finito. El alfabeto contiene un símbolo especial llamado blanco (aquí escrito como 'B') y uno o más símbolos adicionales. La cinta se supone que es arbitrariamente extensible hacia la izquierda y hacia la derecha, es decir, la máquina de Turing siempre es suministrada con tanta cinta como necesite para su computación. Las celdas que no se hayan escrito previamente se asumen que están rellenas con el símbolo blanco. En algunos modelos la cinta tiene un extremo izquierdo marcado con un símbolo especial; la cinta se extiende o es indefinidamente extensible hacia la derecha.</li>
+            <li>Un cabezal que puede leer y escribir símbolos en la cinta y mover la cinta a la izquierda y a la derecha una (y sólo una) celda a la vez. En algunos modelos el cabezal se mueve y la cinta es estacionaria.</li>
+            <li>Un registro de estado que almacena el estado de la máquina de Turing, uno de los estados finitos. Hay un estado inicial especial con el que el registro de estado se inicia. Turing escribe que estos estados reemplazan el "estado de la mente" en que ordinariamente estaría una persona realizando cálculos.</li>
+            <li>Una tabla finita de instrucciones (llamada ocasionalmente como tabla de acción o función de transición). Las instrucciones son usualmente 5-tuplas: qi aj→qi<sub>1</sub> aj<sub>1</sub> dk, que, dado el estado (qi) la máquina está actualmente en y el símbolo (aj) se está leyendo en la cinta (el símbolo actualmente debajo del cabezal) le indica a la máquina hacer lo siguiente en secuencia (para los modelos de 5-tupla):
+                <ul>
+                <li>Borra o escribe un símbolo (reemplazando aj con aj<sub>1</sub>), y entonces</li>
+                    <li>Mueve el cabezal (que es descrito por dk y puede tener los valores: 'L' para un paso a la izquierda, o 'R' para un paso a la derecha, o 'N' para permanecer en el mismo lugar) y luego</li>
+                    <li>Asume el mismo o un nuevo estado como prescrito (ve al estado qi<sub>1</sub>).</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <p><a class="btn btn-primary btn-lg pull-right" role="button">Siguiente</a></p>
+    <footer class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <p class="text-center"><b>Santiago Copete Guisado</b></p>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="margin-top: 40px;">
+            <p class="text-center"><b>D.A.M. 1º - 2014</b></p>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <p class="text-center"><b>Marco A. Fernández Heras</b></p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
