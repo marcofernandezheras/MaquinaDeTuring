@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funcionamiento Lógico - Maquina de Turing</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron" style="overflow: auto">
+            <h1 class="text-center">Funcionamiento Lógico</h1>
+            <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+                <p>Como hemos comentado previamente la máquina de Turing no es un elemento tangible, si no que se usa para demostrar el supuesto funcionamiento lógico de cualquier algoritmo de computación.</p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                <img src="img/funcLogico.png" alt="Cinematón" class="img-responsive">
+            </div>
+
+        </div>
+
+        <div class="col-lg-12">
+            <p>Situémonos pues, como hemos comentado antes, en la configuración inicial de la máquina de Turing, para entender su funcionamiento debemos tener claro que los valores que maneja la máquina y a través de los cuales se determina el cómputo son:</p>
+            <ol>
+                <li>Un estado, que será en el que se encuentra la máquina.</li>
+                <li>Un valor, el valor que leerá.</li>
+                <li>Un nuevo estado, prosiguiendo la lista de estados.</li>
+                <li>Un nuevo valor, equivalente al resultado.</li>
+                <li>Una direccion, que sera la que tome el cabezal.</li>
+            </ol>
+            <p>Ponemos un ejemplo claro de una tabla de transición.</p>
+
+            <table style="border: 1px solid">
+                <tr>
+                    <th>Estado</th>
+                    <th>Símbolo leido</th>
+                    <th>Símbolo escrito</th>
+                    <th>Movimiento</th>
+                    <th>Siguiente Estado</th>
+                </tr>
+                <tr>
+                    <td>S1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>Derecha</td>
+                    <td>S2</td>
+                </tr>
+
+                <tr>
+                    <td>S2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>Derecha</td>
+                    <td>S2</td>
+                </tr>
+
+                <tr>
+                    <td>S2</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>Derecha</td>
+                    <td>S3</td>
+                </tr>
+
+                <tr>
+                    <td>S3</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>Izquierda</td>
+                    <td>S4</td>
+                </tr>
+
+                <tr>
+                    <td>S3</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>Derecha</td>
+                    <td>S3</td>
+                </tr>
+
+                <tr>
+                    <td>S4</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>Izquierda</td>
+                    <td>S4</td>
+                </tr>
+
+                <tr>
+                    <td>S4</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>Izquierda</td>
+                    <td>S5</td>
+                </tr>
+
+                <tr>
+                    <td>S5</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>Izquierda</td>
+                    <td>S5</td>
+                </tr>
+
+                <tr>
+                    <td>S5</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>Derecha</td>
+                    <td>S1</td>
+                </tr>
+            </table>
+
+            <p>Y el recorrido que tiene:</p>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                    <table style="width:100%;">
+                        <tr>
+                            <th>Paso</th>
+                            <th>Estado</th>
+                            <th>Cinta</th>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>S1</td>
+                            <td><span class="red">1</span>1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>S2</td>
+                            <td>0<span class="red">1</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>S2</td>
+                            <td>01<span class="red">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>S3</td>
+                            <td>010<span class="red">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>S4</td>
+                            <td>0101</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>S5</td>
+                            <td>01<span class="red">0</span>1</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>S5</td>
+                            <td>0101</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>S1</td>
+                            <td>1<span class="red">1</span>01</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>S2</td>
+                            <td>10<span class="red">0</span>1</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>S3</td>
+                            <td>100<span class="red">1</span></td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>S3</td>
+                            <td>1001<span class="red">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>S4</td>
+                            <td>100<span class="red">1</span>1</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>S4</td>
+                            <td>10<span class="red">0</span>11</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>S5</td>
+                            <td>1<span class="red">0</span>011</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>S1</td>
+                            <td>11<span class="red">0</span>11</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                    <p>La máquina realiza su proceso por medio de un bucle, en el estado inicial S1, reemplaza el primer 1 con un 0, y pasa al estado S2, con el que avanza hacia la derecha, saltando los símbolos 1 hasta un 0 (que debe existir), cuando lo encuentra pasa al estado S3, con este estado avanza saltando los 1 hasta encontrar otro 0 (la primera vez no habrá ningún 1).</p>
+
+                    <p>Una vez en el extremo derecho, añade un 1. Después comienza el proceso de retorno; con S4 vuelve a la izquierda saltando los 1, cuando encuentra un 0 (en el medio de la secuencia), pasa a S5 que continúa a la izquierda saltando los 1 hasta el 0 que se escribió al principio. Se reemplaza de nuevo este 0 por 1, y pasa al símbolo siguiente, si es un 1, se pasa a otra iteración del bucle, pasando al estado s1 de nuevo. Si es un símbolo 0, será el símbolo central, con lo que la máquina se detiene al haber finalizado el cómputo.</p>
+                </div>
+            </div>
+
+            <br />
+            <p><a class="btn btn-primary btn-lg pull-right" role="button" href="funcMecanico.html">Siguiente</a></p>
+        </div>
+
+        <footer class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <p class="text-center"><b>Santiago Copete Guisado</b></p>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="margin-top: 40px;">
+                <p class="text-center"><b>D.A.M. 1º - 2014</b></p>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <p class="text-center"><b>Marco A. Fernández Heras</b></p>
+            </div>
+        </footer>
+
+</body>
+</html>
