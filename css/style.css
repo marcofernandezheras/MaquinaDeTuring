@@ -23,3 +23,17 @@ th{
     color: red;
     font-weight: bold;
 }
+
+#recorrido{
+    width: 100%;
+}
+
+#recorrido td:last-child{
+    text-align: right;
+}
+
+.table-spacer{
+    width: 30%;
+    float: right;
+    height: 20px;
+}
